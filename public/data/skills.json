@@ -1,0 +1,128 @@
+[
+  {
+    "title": "php",
+    "rating": 5,
+    "type": "Language",
+    "content": "PHP is a server-side scripting language designed primarily for web development but also used as a general-purpose programming language.",
+    "imgsrc": "images/php.png"
+  },
+  {
+    "title": "react",
+    "rating": 4,
+    "type": "Framework",
+    "content": "In computing, React is a JavaScript library for building user interfaces.",
+    "imgsrc": "images/react.bmp"
+  },
+  {
+    "title": "js",
+    "rating": 5,
+    "type": "Language",
+    "content": "JavaScript, often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language.",
+    "imgsrc": "images/js.png"
+  },
+  {
+    "title": "HTML",
+    "rating": 5,
+    "type": "Language",
+    "content": "Hypertext Markup Language is the standard markup language for creating web pages and web applications.",
+    "imgsrc": "images/html.png"
+  },
+  {
+    "title": "CSS",
+    "rating": 5,
+    "type": "Language",
+    "content": "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language.",
+    "imgsrc": "images/css.png"
+  },
+  {
+    "title": "bootstrap",
+    "rating": 4,
+    "type": "Framework",
+    "content": "Bootstrap is a free and open-source front-end web framework for designing websites and web applications.",
+    "imgsrc": "images/bootstrap.png"
+  },
+  {
+    "title": "mysql",
+    "rating": 5,
+    "type": "Database",
+    "content": "MySQL is an open-source relational database management system.",
+    "imgsrc": "images/mysql.jpg"
+  },
+  {
+    "title": "mssql",
+    "rating": 4,
+    "type": "Database",
+    "content": "Microsoft SQL Server is a relational database management system developed by Microsoft.",
+    "imgsrc": "images/mssql.png"
+  },
+  {
+    "title": "c#",
+    "rating": 3,
+    "type": "Language",
+    "content": "C# is a multi-paradigm programming language encompassing strong typing, imperative, declarative, functional, generic, object-oriented, and component-oriented programming disciplines.",
+    "imgsrc": "images/csharp.png"
+  },
+  {
+    "title": "Python",
+    "rating": 2,
+    "type": "Language",
+    "content": "Python is a widely used high-level programming language for general-purpose programming.",
+    "imgsrc": "images/python.jpg"
+  },
+  {
+    "title": ".NET Framework",
+    "rating": 3,
+    "type": "Framework",
+    "content": ".NET Framework is a software framework developed by Microsoft .",
+    "imgsrc": "images/dotnet.png"
+  },
+  {
+    "title": "Sitecore CMS",
+    "rating": 3,
+    "type": "CMS",
+    "content": "Sitecore is an enterprise content management system.",
+    "imgsrc": "images/sitecore.png"
+  },
+  {
+    "title": "Laravel",
+    "rating": 4,
+    "type": "Framework",
+    "content": "Laravel is a free, open-source PHP web framework.",
+    "imgsrc": "images/laravel.png"
+  },
+  {
+    "title": "Wordpress",
+    "rating": 4,
+    "type": "CMS",
+    "content": "WordPress is a free and open-source content management system based on PHP and MySQL.",
+    "imgsrc": "images/wordpress.png"
+  },
+  {
+    "title": "Fork",
+    "rating": 4,
+    "type": "CMS",
+    "content": "Fork CMS is dedicated to creating a user friendly environment to build, monitor and update your website.",
+    "imgsrc": "images/fork.png"
+  },
+  {
+    "title": "RESTful Web Services",
+    "rating": 5,
+    "type": "Web Services",
+    "content": "Representational State Transfer (REST) is an architectural style that specifies constraints that enable services to work best on the Web.",
+    "imgsrc": "images/rest.png"
+  },
+  {
+    "title": "Axios",
+    "rating": 5,
+    "type": "Web Services",
+    "content": "Promise based HTTP client for the browser and node.js.",
+    "imgsrc": "images/axios.jpg"
+  },
+  {
+    "title": "Bulma",
+    "rating": 5,
+    "type": "Framework",
+    "content": "Bulma is an open source CSS framework based on Flexbox and built with Sass.",
+    "imgsrc": "images/bulma.png"
+  }
+]
