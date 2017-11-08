@@ -6,6 +6,7 @@ import {Hero} from 'reactbulma'
 import {Container} from 'reactbulma'
 import {SubTitle} from 'reactbulma'
 import {Title} from 'reactbulma'
+import {Title} from 'reactbulma'
 
 export class Footer extends React.Component{
     render() {

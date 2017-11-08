@@ -13,7 +13,7 @@ export class SkillsList extends React.Component {
         let rowN = 0;
         // let types = Array.from(new Set(this.props.skillCards.map(card => card.type)));
         const types = this.props.skillCards.map(card => card.type).filter(function (elem, index, self) {
-            return index == self.indexOf(elem);
+            return index === self.indexOf(elem);
         });
         let cards = this.props.skillCards.filter(card => card.visible)
         for ( var i = 0; i < cards.length; i++ ) {

@@ -25,7 +25,7 @@ export class SkillsListContainer extends React.Component{
     handleFilterOnChange(e){
         const skillsList = this.state.skillCardsList;
         skillsList.map((skill) =>{
-            if(skill.type!==e.target.value && e.target.value != ""){
+            if(skill.type!==e.target.value && e.target.value !== ""){
                 skill.visible=false;
             }else{
                 skill.visible=true;

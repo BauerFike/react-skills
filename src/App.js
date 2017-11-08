@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import './App.css';
 import {Header} from './components/Header'
 import {SkillsListContainer} from './containers/SkillsListContainer'
+import {Game} from './hex/Game';
+
+new Game();
 
 class App extends Component {
     constructor(props){
@@ -28,3 +31,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+
