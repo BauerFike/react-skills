@@ -15,18 +15,20 @@ export class Board {
         this.pieces = [];
     }
 
-    addHexagon(hex) {
-        if (this.hexagons[hex.position.row] === undefined) {
-            this.hexagons[hex.position.row] = [];
-        }
-        this.hexagons[hex.position.row][hex.position.col] = hex;
+    addHexagon(hex,position) {
+        this.addElement("hexagons",hex,position);
     }
 
-    addPiece(piece){
-        if(this.pieces[piece.position.row]===undefined){
-            this.pieces[piece.position.row] = [];
+    addPiece(piece,position){
+        this.addElement("pieces",piece,position);
+    }
+
+    addElement(type,element,position){
+        if(this[type][position.row]===undefined){
+            this[type][position.row] = [];
         }
-        this.pieces[piece.position.row][piece.position.col] = piece;
+        this[type][position.row][position.col] = element;
+        element.position = position;
     }
 
 

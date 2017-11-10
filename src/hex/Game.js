@@ -19,7 +19,7 @@ export class Game {
         this.setCurrentState = this.setCurrentState.bind(this);
         this.gameState = new GameState(this.setCurrentState);
         this.selectHex = this.selectHex.bind(this);
-        this.createBoard(10, 10, 100, 90);
+        this.createBoard(10, 10, 100, 50);
         this.rules = {
             maxPathLength : 3
         }
@@ -27,22 +27,15 @@ export class Game {
     }
 
     makePiece(type,x,y,w,h,row,col){
-        let piece = pieceGenerator(type,x,y,w,h,{
-            "row": row,
-            "col": col
-        });
-        this.board.addPiece( piece );
-        console.log(piece);
+        let piece = pieceGenerator(type,x,y,w,h);
+        this.board.addPiece( piece ,{row,col});
         this.gameState.update("ADD_PIECE",{piece:piece});
         return piece;
     }
 
     makeHexagon(x,y,w,h,row,col){
-        let hex = new Hexagon(x,y, w, h, {
-            "row": row,
-            "col": col
-        });
-        this.board.addHexagon(hex);
+        let hex = new Hexagon(x,y, w, h);
+        this.board.addHexagon(hex,{row,col});
         this.gameState.update("ADD_HEXAGON",{hex:hex});
         return hex;
     }
@@ -57,7 +50,7 @@ export class Game {
                     offset_Y = colHeight / 2;
                 }
                 let offset_X = colWidth / 4 * col;
-                this.makeHexagon(col * colWidth - offset_X,row * colHeight - offset_Y,100, 90, row, col);
+                this.makeHexagon(col * colWidth - offset_X,row * colHeight - offset_Y,colWidth, colHeight, row, col);
             }
         }
         for ( let row = 0; row < rows; row++ ) {

@@ -4,8 +4,7 @@
 import {Element} from '../Element'
 
 export class MainPiece extends Element{
-    constructor(x,y,w,h,position){
-        super(x,y,w,h,position);
-
+    constructor(x,y,w,h){
+        super(x,y,w,h);
     }
 }

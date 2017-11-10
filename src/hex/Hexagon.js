@@ -7,9 +7,8 @@ import {Point} from '../hex/Point'
 
 
 export class Hexagon extends Element {
-    constructor(x,y,w,h,pos){
+    constructor(x,y,w,h){
         super(x,y,w,h);
-        this.position = pos;
         this.state = "DEFAULT";
         /**
          * Rectangle containing hexagon
