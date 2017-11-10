@@ -3,8 +3,8 @@
  */
 import {MainPiece} from "../pieces/MainPiece"
 
-export let pieceGenerator = function(type,x,y,col,row,sprite){
+export let pieceGenerator = function(type,x,y,w,h,position){
     if(type==="mainpiece"){
-        return new MainPiece(x,y,col,row,sprite);
+        return new MainPiece(x,y,w,h,position);
     }
 }

@@ -6,8 +6,9 @@ export class GameState {
         this.states = [
                 {
                     board:{
-                        hexagons: []
-                    }
+                        hexagons: [],
+                        pieces: [],
+                    },
                 }
             ];
         this.setCurrentState = setCurrentState;
@@ -16,6 +17,12 @@ export class GameState {
     update(action, obj) {
         let newState = Object.assign({},this.states[this.states.length-1]);
         switch (action) {
+            case "ADD_PIECE":
+                if(newState.board.pieces[obj.piece.position.row]===undefined){
+                    newState.board.pieces[obj.piece.position.row] = [];
+                }
+                newState.board.pieces[obj.piece.position.row][obj.piece.position.col] = "DEFAULT";
+                break;
             case "ADD_HEXAGON":
                 if(newState.board.hexagons[obj.hex.position.row]===undefined){
                     newState.board.hexagons[obj.hex.position.row] = [];

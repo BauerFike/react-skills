@@ -60,6 +60,7 @@ export class PhaserHandler {
         let game = this.game;
         let hexGame = this.hexGame;
         let boardGroup = this.boardGroup  = game.add.group();
+        let piecesGroup = this.piecesGroup  = game.add.group();
         let style = { font: "11px source-code-pro", fill: "#444" };
         this.hexGame.board.hexagons.forEach(function (rows,i) {
             rows.forEach(function (hex,j) {
@@ -68,6 +69,12 @@ export class PhaserHandler {
                 hex.sprite.events.onInputDown.add(hexGame.selectHex.bind(null,hex,phaser.drawPath));
                 boardGroup.add(hex.sprite);
                 game.add.text(hex.x + 50, hex.y + 50, i + " " + j, style);
+            });
+        });
+        this.hexGame.board.pieces.forEach(function (rows,i) {
+            rows.forEach(function (piece,j) {
+                piece.sprite = phaser.makeSprite('pieces_main',piece.x,piece.y, piece.w, piece.h);
+                piecesGroup.add(piece.sprite);
             });
         });
     }

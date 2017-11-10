@@ -2,7 +2,6 @@
  * Created by luca on 7/11/2017.
  */
 
-import {Hexagon} from '../hex/Hexagon'
 import Graph from 'node-dijkstra'
 
 export class Board {
@@ -16,28 +15,18 @@ export class Board {
         this.pieces = [];
     }
 
-    addHexagon(w, h, col, row, img) {
-        // let w = this.width/this.cols;
-        // let h = this.height/this.rows;
-        if (this.hexagons[row] === undefined) {
-            this.hexagons[row] = [];
+    addHexagon(hex) {
+        if (this.hexagons[hex.position.row] === undefined) {
+            this.hexagons[hex.position.row] = [];
         }
-        let offset_Y = 0;
-        if (col % 2 !== 0) {
-            offset_Y = h / 2;
-        }
-        let offset_X = w / 4 * col;
-        this.hexagons[row][col] = new Hexagon(col * w - offset_X, row * h - offset_Y, w, h, img, {
-            "row": row,
-            "col": col
-        });
+        this.hexagons[hex.position.row][hex.position.col] = hex;
     }
 
-    addPiece(piece,row,col){
-        if(this.pieces[row]===undefined){
-            this.pieces[row] = [];
+    addPiece(piece){
+        if(this.pieces[piece.position.row]===undefined){
+            this.pieces[piece.position.row] = [];
         }
-        this.pieces[row][col] = piece;
+        this.pieces[piece.position.row][piece.position.col] = piece;
     }
 
 

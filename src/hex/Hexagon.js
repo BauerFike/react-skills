@@ -2,13 +2,13 @@
  * Created by luca on 7/11/2017.
  */
 
-import {Shape} from '../hex/Shape'
+import {Element} from './Element'
 import {Point} from '../hex/Point'
 
 
-export class Hexagon extends Shape {
-    constructor(x,y,w,h,img,pos){
-        super(x,y,w,h,img);
+export class Hexagon extends Element {
+    constructor(x,y,w,h,pos){
+        super(x,y,w,h);
         this.position = pos;
         this.state = "DEFAULT";
         /**
