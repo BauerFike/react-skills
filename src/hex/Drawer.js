@@ -23,7 +23,7 @@ export class Drawer{
     }
 
     handleClick(clickHandler){
-        this.canvas.onclick = this.getCursorPosition;
+        this.canvas.onclick = clickHandler;
     }
 
     getCursorPosition(event) {

@@ -7,8 +7,10 @@ import {Point} from '../hex/Point'
 
 
 export class Hexagon extends Shape {
-    constructor(x,y,w,h,img){
+    constructor(x,y,w,h,img,pos){
         super(x,y,w,h,img);
+        this.position = pos;
+        this.state = "DEFAULT";
         /**
          * Rectangle containing hexagon
          * The 6 points of the hex
@@ -19,27 +21,13 @@ export class Hexagon extends Shape {
          */
         this.pointsRect = {"tl":null,"tr":null,"br":null,"bl":null};
         this.points = [];
+        this.links = [];
+        this.center = {};
+        this.center["x"] = x+w/2;
+        this.center["y"] = y+h/2;
         this.generatePoints();
-    }
-
-    checkCollision(point){
-        if(point.inRectangle(this.pointsRect.tl,this.pointsRect.br)) {
-            // console.log("rec" + this.x + " " + this.y);
-            if (point.inTriangle(this.pointsRect.tl, this.points[0], this.points[5])) {
-                return false;
-            }
-            if (point.inTriangle(this.pointsRect.tr, this.points[1], this.points[2])) {
-                return false;
-            }
-            if (point.inTriangle(this.pointsRect.br, this.points[2], this.points[3])) {
-                return false;
-            }
-            if (point.inTriangle(this.pointsRect.bl, this.points[4], this.points[5])) {
-                return false;
-            }
-            return true;
-        }
-        return false;
+        this.handleClick = this.handleClick.bind(this);
+        this.addLink = this.addLink.bind(this) ;
     }
 
     generatePoints(){
@@ -55,6 +43,40 @@ export class Hexagon extends Shape {
         this.points[3] = new Point(this.x+this.w-wOff,this.y+this.h);
         this.points[4] = new Point(this.x+wOff,this.y+this.h);
         this.points[5] = new Point(this.x,this.y+hOff);
+    }
+
+    addLink(link){
+        this.links.push(link);
+    }
+
+    handleClick(){
+        console.log(this.position);
+        console.log(this.links);
+    }
+
+    setSprite(sprite){
+        this.sprite = sprite;
+    }
+
+    setState(state){
+        switch(state) {
+            case "DEFAULT":
+                this.state = state;
+                // this.sprite.loadTexture('hexagon_default');
+                // this.sprite.width = this.w;
+                // this.sprite.height = this.h;
+                this.sprite.tint = 0xffffff;
+                break;
+            case "SELECTED":
+                this.state = state;
+                // this.sprite.loadTexture('hexagon_selected');
+                // this.sprite.width = this.w;
+                // this.sprite.height = this.h;
+                this.sprite.tint = Math.random() * 0xffffff;
+                break;
+            default:
+                break;
+        }
     }
 
 }
